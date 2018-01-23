@@ -15,7 +15,7 @@ public class RoomSizeCalculator {
 
 		// Get user input
 
-		if (keepGoing == 1) {
+		do {
 
 			System.out.println("Want to calculate the size of the room?\nWhat is the room's length in feet?");
 			length = scnr.nextDouble();
@@ -46,7 +46,8 @@ public class RoomSizeCalculator {
 					+ "\nIf not, enter: 2");
 			keepGoing = scnr.nextInt();
 
-		} else {
+		} while (keepGoing == 1);
+		{
 			System.out.println("Ok, bye.");
 		}
 		scnr.close();
