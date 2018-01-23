@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class RoomSizeCalculator {
+
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+
+		double length;
+		double width;
+		double height;
+		double perimeter;
+		double area;
+		double volume;
+		int keepGoing = 1;
+
+		// Get user input
+
+		if (keepGoing == 1) {
+
+			System.out.println("Want to calculate the size of the room?\nWhat is the room's length in feet?");
+			length = scnr.nextDouble();
+			System.out.println("Ok, how wide is the room in feet?");
+			width = scnr.nextDouble();
+			System.out.println("And what is the height of the room in feet?");
+			height = scnr.nextDouble();
+
+			// Calculate results
+
+			perimeter = (length * 2) + (width * 2);
+			area = length * width;
+			volume = area * height;
+
+			// Change to string (to shorten to two decimal places) and print
+
+			String perim = String.format("%.2f", perimeter);
+			String ar = String.format("%.2f", area);
+			String vol = String.format("%.2f", volume);
+
+			System.out.print("The perimeter is " + perim + " feet.\n");
+			System.out.print("The area is " + ar + " ft^2.\n");
+			System.out.println("The volume is " + vol + " ft^3.\n");
+
+			// Ask user if they would like to continue
+
+			System.out.println("If you would like to calculate the size of another room, enter the number: 1"
+					+ "\nIf not, enter: 2");
+			keepGoing = scnr.nextInt();
+
+		} else {
+			System.out.println("Ok, bye.");
+		}
+		scnr.close();
+	}
+}
